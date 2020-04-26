@@ -1,0 +1,229 @@
+@import "config";
+@import "menu";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include background;
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+//Headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    font-size: 5.5rem;
+    text-align: center;
+  }
+}
+
+a {
+  color: rgb(70, 63, 63);
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary, .textSecondary {
+  color: $secondary-color;
+}
+main {
+  padding: 4rem;
+  // height: 100%;
+  min-height: calc(100vh - 60px);
+
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.4rem;
+
+      &:hover {
+        color: $secondary-color;
+        @include easeOut();
+      }
+    }
+  }
+
+  &#home {
+    text-align: center;
+    overflow: hidden;
+    h1 {
+      margin-top: 20vh;
+    }
+  }
+}
+
+#about {
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: linear-gradient(to right bottom, rgba(#fff, 0.93), rgba(231, 225, 225, 0.93)), url(/img/background2.jpg);
+}
+.about-info {
+  text-align: center;
+  width: 100%;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    "bioimage bioimage bioimage"
+    "bio bio bio"
+    "heading heading heading"
+    "card-1 card-2 card-3"
+    "card-4 card-5 card-6"
+    "card-7 card-8 card";
+  grid-template-columns: repeat(3, 1fr);
+
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+  }
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+    
+    &__text {
+      margin-bottom: 5rem;
+    }
+  }
+
+  .mes-crt {
+    grid-area: heading;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  .card img{
+    cursor: pointer;
+    width: 75%;
+    border: 5px solid darken($primary-color, 30);
+  
+    &:hover {
+      opacity: 0.5;
+      border: $secondary-color 5px solid;
+      @include easeOut;
+    }
+    
+  }
+  
+  .card-1 {
+    grid-area: card-1;
+  }
+
+  .card-2 {
+    grid-area: card-2;
+  }
+
+  .card-3 {
+    grid-area: card-3;
+  }
+
+  .card-4 {
+    grid-area: card-4;
+  }
+
+  .card-5 {
+    grid-area: card-5;
+  }
+
+  .card-6 {
+    grid-area: card-6;
+  }
+
+  .card-7 {
+    grid-area: card-7;
+  }
+
+  .card-8 {
+    grid-area: card-8;
+  }
+}
+
+// Work / Projects
+.projects {
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 5px solid darken($primary-color, 15);
+
+    &:hover {
+      opacity: 0.5;
+      border: $secondary-color 5px solid;
+      @include easeOut;
+    }
+  }
+}
+
+#work h1 {
+  margin-bottom: 2rem;
+}
+
+//Contact
+#contact {
+  margin-top: 3rem;
+  .row {
+    margin: 0;
+  }
+  h1 {
+    
+  }
+}
+
+// Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: lighten($secondary-color, 20);
+    color: set-text-color($secondary-color);
+  }
+}
+.btn-form,
+.btn-form:visited{
+  cursor: pointer;
+  background-color: #3fa044;
+  color: white;
+  &:hover {
+    background-color: lighten(#3fa044, 10);
+  }
+}
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+.btn-light {
+  @extend .btn;
+  background: darken($primary-color, 7);
+  color: #333;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 15);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
+
+@import "mobile";
