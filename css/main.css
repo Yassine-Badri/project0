@@ -219,10 +219,11 @@ main {
 #work h1 {
   margin-bottom: 2rem; }
 
-#contact {
-  margin-top: 3rem; }
-  #contact .row {
-    margin: 0; }
+#contact .row {
+  margin: 0; }
+
+#contact h1 {
+  padding: 4rem; }
 
 .btn, .btn-dark, .btn-light {
   display: block;
